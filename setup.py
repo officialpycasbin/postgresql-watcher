@@ -12,7 +12,7 @@ setup(
     description="Casbin role watcher to be used for monitoring updates to policies for PyCasbin",
     long_description=readme,
     long_description_content_type="text/markdown",
-    url="https://github.com/pycasbin/postgresql-watcher",
+    url="https://github.com/officialpycasbin/postgresql-watcher",
     packages=find_packages(),
     install_requires=open("requirements.txt").read().splitlines(),
     extras_require={

@@ -1,7 +1,7 @@
 # postgresql-watcher
 
-[![Build Status](https://github.com/pycasbin/postgresql-watcher/actions/workflows/release.yml/badge.svg)](https://github.com/pycasbin/postgresql-watcher/actions/workflows/release.yml)
-[![Coverage Status](https://coveralls.io/repos/github/pycasbin/postgresql-watcher/badge.svg)](https://coveralls.io/github/pycasbin/postgresql-watcher)
+[![Build Status](https://github.com/officialpycasbin/postgresql-watcher/actions/workflows/release.yml/badge.svg)](https://github.com/officialpycasbin/postgresql-watcher/actions/workflows/release.yml)
+[![Coverage Status](https://coveralls.io/repos/github/officialpycasbin/postgresql-watcher/badge.svg)](https://coveralls.io/github/officialpycasbin/postgresql-watcher)
 [![Version](https://img.shields.io/pypi/v/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
 [![Pyversions](https://img.shields.io/pypi/pyversions/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
