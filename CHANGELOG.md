@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.2.0](https://github.com/officialpycasbin/postgresql-watcher/compare/v1.1.1...v1.2.0) (2024-10-25)
+
+
+### Features
+
+* update path ([788607f](https://github.com/officialpycasbin/postgresql-watcher/commit/788607f37a792ecacdf852cb5d817db9678df293))
+
 ## [1.1.1](https://github.com/officialpycasbin/postgresql-watcher/compare/v1.1.0...v1.1.1) (2024-07-16)
 
 
