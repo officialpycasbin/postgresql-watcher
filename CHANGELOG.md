@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.4.0](https://github.com/officialpycasbin/postgresql-watcher/compare/v1.3.0...v1.4.0) (2025-08-20)
+
+
+### Features
+
+* fix README badges ([#2](https://github.com/officialpycasbin/postgresql-watcher/issues/2)) ([746c2c8](https://github.com/officialpycasbin/postgresql-watcher/commit/746c2c87109a5a7a0c7ef76954d6e7b68582c821))
+
 # [1.3.0](https://github.com/officialpycasbin/postgresql-watcher/compare/v1.2.0...v1.3.0) (2025-08-15)
 
 
