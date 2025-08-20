@@ -5,7 +5,7 @@
 [![Version](https://img.shields.io/pypi/v/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
 [![Pyversions](https://img.shields.io/pypi/pyversions/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
-[![Download](https://img.shields.io/pypi/dm/casbin-postgresql-watcher.svg)](https://pypi.org/project/casbin-postgresql-watcher/)
+[![Download](https://static.pepy.tech/badge/casbin-postgresql-watcher)](https://pypi.org/project/casbin-postgresql-watcher/)
 [![Discord](https://img.shields.io/discord/1022748306096537660?logo=discord&label=discord&color=5865F2)](https://discord.gg/S5UjpzGZjN)
 
 Casbin watcher based on PostgreSQL for monitoring updates to casbin policies.
