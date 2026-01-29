@@ -50,7 +50,6 @@ class PostgresqlWatcher(object):
             logger (Optional[Logger], optional): Custom logger to use. Defaults to None.
         """
         self.update_callback = None
-        self.parent_conn = None
         self.host = host
         self.port = port
         self.user = user
