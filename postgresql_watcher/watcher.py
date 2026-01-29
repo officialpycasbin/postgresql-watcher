@@ -134,6 +134,7 @@ class PostgresqlWatcher(object):
             self.child_conn = None
         if self.subscription_process is not None:
             self.subscription_process.terminate()
+            self.subscription_process.join()
             self.subscription_process = None
 
     def set_update_callback(self, update_handler: Optional[Callable[[None], None]]):
