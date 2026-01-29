@@ -50,7 +50,7 @@ class TestConfig(TestCase):
             assert isinstance(pg_watcher.parent_conn, connection.PipeConnection)
         else:
             assert isinstance(pg_watcher.parent_conn, connection.Connection)
-        assert isinstance(pg_watcher.subscription_proces, context.Process)
+        assert isinstance(pg_watcher.subscription_process, context.Process)
 
     def test_update_single_pg_watcher(self):
         pg_watcher = get_watcher("test_update_single_pg_watcher")

@@ -83,7 +83,7 @@ class PostgresqlWatcher(object):
         self._cleanup_connections_and_processes()
 
         self.parent_conn, self.child_conn = Pipe()
-        self.subscription_proces = Process(
+        self.subscription_process = Process(
             target=casbin_channel_subscription,
             args=(
                 self.child_conn,
@@ -109,9 +109,9 @@ class PostgresqlWatcher(object):
         self,
         timeout=20, # seconds
     ):
-        if not self.subscription_proces.is_alive():
+        if not self.subscription_process.is_alive():
             # Start listening to messages
-            self.subscription_proces.start()
+            self.subscription_process.start()
             # And wait for the Process to be ready to listen for updates
             # from PostgreSQL
             timeout_time = time() + timeout
