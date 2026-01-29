@@ -124,6 +124,9 @@ class PostgresqlWatcher(object):
                     raise PostgresqlWatcherChannelSubscriptionTimeoutError(timeout)
                 sleep(1 / 1000)  # wait for 1 ms
 
+    def stop(self):
+        self._cleanup_connections_and_processes()
+
     def _cleanup_connections_and_processes(self) -> None:
         # Clean up potentially existing Connections and Processes
         if self.parent_conn is not None:
