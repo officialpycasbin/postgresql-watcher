@@ -108,6 +108,9 @@ class PostgresqlWatcher(object):
         self,
         timeout=20, # seconds
     ):
+        if self.subscription_process is None:
+            self._create_subscription_process(start_listening=False)
+
         if not self.subscription_process.is_alive():
             # Start listening to messages
             self.subscription_process.start()
