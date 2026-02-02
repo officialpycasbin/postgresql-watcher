@@ -134,7 +134,7 @@ class PostgresqlWatcher(object):
         if self.child_conn is not None:
             self.child_conn.close()
             self.child_conn = None
-        if self.subscription_process is not None:
+        if self.subscription_process is not None and self.subscription_process.pid is not None:
             self.subscription_process.terminate()
             self.subscription_process.join()
             self.subscription_process = None
