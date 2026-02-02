@@ -50,7 +50,6 @@ class PostgresqlWatcher(object):
             logger (Optional[Logger], optional): Custom logger to use. Defaults to None.
         """
         self.update_callback = None
-        self.parent_conn = None
         self.host = host
         self.port = port
         self.user = user
@@ -83,7 +82,7 @@ class PostgresqlWatcher(object):
         self._cleanup_connections_and_processes()
 
         self.parent_conn, self.child_conn = Pipe()
-        self.subscription_proces = Process(
+        self.subscription_process = Process(
             target=casbin_channel_subscription,
             args=(
                 self.child_conn,
@@ -109,9 +108,12 @@ class PostgresqlWatcher(object):
         self,
         timeout=20, # seconds
     ):
-        if not self.subscription_proces.is_alive():
+        if self.subscription_process is None:
+            self._create_subscription_process(start_listening=False)
+
+        if not self.subscription_process.is_alive():
             # Start listening to messages
-            self.subscription_proces.start()
+            self.subscription_process.start()
             # And wait for the Process to be ready to listen for updates
             # from PostgreSQL
             timeout_time = time() + timeout
@@ -124,6 +126,9 @@ class PostgresqlWatcher(object):
                     raise PostgresqlWatcherChannelSubscriptionTimeoutError(timeout)
                 sleep(1 / 1000)  # wait for 1 ms
 
+    def stop(self):
+        self._cleanup_connections_and_processes()
+
     def _cleanup_connections_and_processes(self) -> None:
         # Clean up potentially existing Connections and Processes
         if self.parent_conn is not None:
@@ -132,8 +137,9 @@ class PostgresqlWatcher(object):
         if self.child_conn is not None:
             self.child_conn.close()
             self.child_conn = None
-        if self.subscription_process is not None:
+        if self.subscription_process is not None and self.subscription_process.pid is not None:
             self.subscription_process.terminate()
+            self.subscription_process.join()
             self.subscription_process = None
 
     def set_update_callback(self, update_handler: Optional[Callable[[None], None]]):
