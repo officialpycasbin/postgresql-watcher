@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.5.0](https://github.com/officialpycasbin/postgresql-watcher/compare/v1.4.0...v1.5.0) (2026-02-02)
+
+
+### Features
+
+* fix bugs in shutdown and add `stop` ([#4](https://github.com/officialpycasbin/postgresql-watcher/issues/4)) ([595e135](https://github.com/officialpycasbin/postgresql-watcher/commit/595e13511c4e436b6a11957210cbfd4ce4cbbed3))
+
 # [1.4.0](https://github.com/officialpycasbin/postgresql-watcher/compare/v1.3.0...v1.4.0) (2025-08-20)
 
 
