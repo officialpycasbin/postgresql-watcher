@@ -115,6 +115,28 @@ class TestConfig(TestCase):
         self.assertFalse(main_watcher.should_reload())
         self.assertTrue(handler.call_count == 0)
 
+    def test_stop_and_restart(self):
+        channel_name = "test_stop_and_restart"
+        pg_watcher = get_watcher(channel_name)
+
+        # Verify initially started
+        self.assertTrue(pg_watcher.subscription_process.is_alive())
+
+        # Stop the watcher
+        pg_watcher.stop()
+        self.assertIsNone(pg_watcher.subscription_process)
+
+        # Restart the watcher
+        pg_watcher.start()
+
+        # Verify resources are recreated and process is alive
+        self.assertTrue(pg_watcher.subscription_process.is_alive())
+
+        # Verify it still works after restart
+        pg_watcher.update()
+        sleep(CASBIN_CHANNEL_SELECT_TIMEOUT * 2)
+        self.assertTrue(pg_watcher.should_reload())
+
 
 if __name__ == "__main__":
     main()
